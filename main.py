@@ -8,7 +8,14 @@ def main():
         option = input("Please enter an option: ")
 
         if option == '1':
-            pass
+            # Encode password
+            password = input("Please enter your password to encode: ")
+            encoded = password_encoder(password)
+            if encoded.startswith("Invalid"):
+                print(encoded)  # Print the error message
+            else:
+                stored_passwords[password] = encoded  # Store the encoded password associated with the original
+                print("Your password has been encoded and stored!")
 
 
         elif option == '2':
